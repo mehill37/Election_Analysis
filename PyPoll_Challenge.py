@@ -21,8 +21,10 @@ winning_percentage = 0
 winning_county = ""
 county_wins = 0
 winning_c_percentage = 0
+# declare results variabvles
+county_results = ''
 # Open the election results and read the file.
-with open(file_to_load) as election_data:
+with open(file_to_load, newline='') as election_data:
     file_reader = csv.reader(election_data)
     # Read the header row.
     headers = next(file_reader)
@@ -52,15 +54,27 @@ with open(file_to_load) as election_data:
             county_votes[county_name] = 0
         # Add a vote to the county's count.
         county_votes[county_name] += 1
-        # retrieve count and percentage per county.
-        for county_name in county_votes:
-            votes_county = county_votes[county_name]
-            county_votepercent = float(votes_county) / float(total_votes) * 100
-            county_results = (
-            f"{county_name}: {county_votepercent:.1f}% ({votes_county:,})\n") 
-            if(votes_county > county_wins) and (county_votepercent > winning_c_percentage):
-                # If true then set county_wins = votes_county and winning_c_percentage =
-                winning_county = county_name       
+        # # retrieve count and percentage per county.
+        # for county_name in county_votes:
+        #     votes_county = county_votes[county_name]
+        #     county_votepercent = float(votes_county) / float(total_votes) * 100
+        #     county_results += (
+        #     f"{county_name}: {county_votepercent:.1f}% ({votes_county:,})\n") 
+        #     if(votes_county > county_wins) and (county_votepercent > winning_c_percentage):
+        #         # If true then set county_wins = votes_county and winning_c_percentage =
+        #         winning_county = county_name     
+# retrieve count and percentage per county.
+for county_name in county_votes:
+    votes_county = county_votes[county_name]
+    county_votepercent = float(votes_county) / float(total_votes) * 100
+    county_results += (
+    f"{county_name}: {county_votepercent:.1f}% ({votes_county:,})\n") 
+    if(votes_county > county_wins) and (county_votepercent > winning_c_percentage):
+        # If true then set county_wins = votes_county and winning_c_percentage =
+        winning_county = county_name   
+        county_wins  = votes_county
+        winning_c_percentage = county_votepercent
+
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
     # After opening the file print the final vote count to the terminal.

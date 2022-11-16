@@ -20,9 +20,7 @@ Diana DeGette with 73.8% of the votes or 272,892 ballots.
 Raymon Anthony Doane with 3.1% of the votes or 11,606 ballots.
 ### County Results:
 The counties were Jefferson, Denver, and Arapahoe. Denver had the highest amount of voters with 82.8%. Jefferson had only 10.5% of the voters and Arapahoe with only 6.7% of the voters.
-
-![election_results](https://user-images.githubusercontent.com/115674686/201245702-b832c7bb-2d28-4c54-9fb0-4fb4c47e67ee.jpg)
-
+C:\Users\Mary\Desktop\Data Visualizations BC\election_results.jpg
 ### Conclusion
 Out of the three candidates (Charles Casper Stockham, Diana Degette, and Raymon Anthony Doane) Diana DeGette came out as the winner of the election with 73.8% of the votes. Charles Casper Stockham only received 23% of voters and Rayom Anthony Doanes was in last with only 3.1% of voters. The majority of voters live in Denver County.
 
